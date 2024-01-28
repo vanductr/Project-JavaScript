@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cửa hàng</title>
+    <link rel="stylesheet" href="../CSS/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="popup" id="popup">
+      <img src="../../img/404-tick.png" />
+      <h2>Xin Cảm Ơn!</h2>
+      <p>Sản phẩm đã được thêm vào giỏ hàng.</p>
+      <button type="buttons" onclick="fClosePopup()">Tiếp tục mua hàng</button>
+    </div>
+
+    <section id="header">
+      <a href="./index.html"
+        ><img src="../../img/logo.png" class="logo" alt=""
+      /></a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a class="active" href="shop.html">Cửa hàng</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">Về chúng tôi</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <span id="iconCartSpan">0</span>
+          </li>
+          <li id="loginUser"></li>
+          <li id="logoutUser"></li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <i id="bar" class="fa-solid fa-bars"></i>
+      </div>
+    </section>
+
+    <section id="page-header">
+      <h2>#stayhome</h2>
+
+      <p>Tiết kiệm nhiều hơn với phiếu giảm giá và giảm giá tới 70%!</p>
+    </section>
+
+    <!-- Phần tìm kiếm và lọc sản phẩm(phần mình thêm) -->
+    <section style="padding-bottom: 0" id="locSanPham" class="section-p1">
+      <div class="tim-kiem">
+        <input id="searchInput" type="text" placeholder="bạn muốn tìm gì" />
+        <button onclick="searchProduct()">Tìm kiếm</button>
+      </div>
+
+      <div class="loc-san-pham">
+        <select name="" id="">
+          <option value="">Áo</option>
+          <option value="">Quần</option>
+          <option value="">Giày dép</option>
+          <option value="">Phụ kiện</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <div class="pro-container" id="proContainer">
+        <!-- <div class="pro" onclick="window.location.href='sproduct.html';">
+          <img src="../../img/products/f1.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/f2.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/f3.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/f4.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/f5.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/f6.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/f7.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/f8.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n1.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n2.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n3.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n4.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n5.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n6.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n7.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="../../img/products/n8.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+
+          <a href="#"><i class="fa-solid fa-cart-plus cart"></i></a>
+        </div> -->
+      </div>
+    </section>
+
+    <section id="pagination" class="section-p1">
+      <!-- <i class="fa-solid fa-arrow-left-long"></i>
+      <span>1</span>
+      <span>2</span>
+      <i class="fa-solid fa-arrow-left-long"></i> -->
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Đăng ký nhận bản tin</h4>
+        <p>
+          Nhận thông tin cập nhật qua Email về cửa hàng mới nhất của chúng tôi
+          và các <span>ưu đãi đặc biệt</span>.
+        </p>
+      </div>
+
+      <div class="form">
+        <input type="text" placeholder="Địa chỉ email của bạn" />
+        <button class="normal">Đăng ký</button>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="../../img/logo.png" alt="" />
+        <h4>Liên hệ</h4>
+        <p><strong>Địa chỉ:</strong> Mỹ Đình - Nam Từ Liêm - Hà Nội - VN</p>
+        <p><strong>Số điện thoại:</strong> +84 034 355 8164 / 1900 2525</p>
+        <p><strong>Giờ làm việc:</strong> 08:00 - 18:00, T2 - T7</p>
+
+        <div class="follow">
+          <h4>Theo dõi tôi</h4>
+          <div class="icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-square-x-twitter"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4>Giới thiệu</h4>
+        <a href="#">Về chúng tôi</a>
+        <a href="#">Thông tin giao hàng</a>
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản & điều kiện</a>
+        <a href="#">Liên hệ chúng tôi</a>
+      </div>
+
+      <div class="col">
+        <h4>Tài khoản của tôi</h4>
+        <a href="#">Đăng nhập</a>
+        <a href="#">Xem giỏ hàng</a>
+        <a href="#">Sản phẩm yêu thích</a>
+        <a href="#">Theo dõi đơn hàng của tôi</a>
+        <a href="#">Giúp đỡ</a>
+      </div>
+
+      <div class="col install">
+        <h4>Tải Ứng dụng</h4>
+        <p>Tải xuống từ App Store hoặc Google Play</p>
+        <div class="row">
+          <img src="../../img/pay/app.jpg" alt="" />
+          <img src="../../img/pay/play.jpg" alt="" />
+        </div>
+        <p>Cổng thanh toán an toàn</p>
+        <img src="../../img/pay/pay.png" alt="" />
+      </div>
+
+      <div class="copyright">
+        <p>© 2024, Tech2 etc - HTML CSS JavaScript</p>
+      </div>
+    </footer>
+
+    <script src="../JS/format.js"></script>
+    <script src="../JS/shop.js"></script>
+  </body>
+</html>

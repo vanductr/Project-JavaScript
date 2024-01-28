@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../CSS/category.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <!-- Form Thêm - Sửa Danh mục sản phẩm -->
+    <div id="formThemSua" class="hidden">
+      
+        <form action="#" method="post" id="categoryForm" class="active">
+            <h3 id="form-title">Thêm Danh mục SP</h3>
+            <label for="categoryName">Tên danh mục:</label>
+            <input type="text" id="categoryName" name="categoryName" required>
+      
+            <label for="creationDate">Ngày tạo:</label>
+            <input type="date" id="creationDate" name="creationDate" required>
+      
+            <label for="updateDate">Ngày cập nhật:</label>
+            <input type="date" id="updateDate" name="updateDate" required>
+      
+            <button type="button" class="cancel" onclick="toggleForm()">Huỷ</button>
+            <button type="button" onclick="themSuaSp()">Lưu</button>
+        </form>
+              
+    </div>
+
+    <div class="newContainer">
+        <section id="menu">
+            <div class="logo">
+              <img src="../images-admin/VinStay.png" alt="" />
+              <h2><a href="../../User/Trang Chủ/index.html">©️</a></h2>
+            </div>
+      
+            <div class="items">
+              <li >
+                <i class="fa-solid fa-chart-pie"></i><a href="./AdminDashboard.html">Quản lí User</a>
+              </li>
+      
+              <li>
+                  <i class="fa-solid fa-table-cells-large"></i
+                  ><a href="../HTML/product.html">Products</a>
+              </li>
+      
+              <li >
+                <i class="fa-brands fa-uikit"></i><a href="./category.html">Category</a>
+              </li>
+              
+              <li>
+                  <i class="fa-solid fa-pen-to-square"></i></i><a href="#">Khác (Chưa cập nhật)</a>
+              </li>
+              <li>
+                  <i class="fa-brands fa-cc-visa"></i><a href="#">Khác (Chưa cập nhật)</a>
+              </li>
+              <li>
+                  <i class="fa-solid fa-burger"></i><a href="#">Khác (Chưa cập nhật)</a>
+              </li>
+              <li>
+                  <i class="fa-solid fa-chart-line"></i><a href="#">Khác (Chưa cập nhật)</a>
+              </li>
+              <!-- <li>
+                  <i class="fa-solid fa-vial-virus"></i><a href="./formNhapTTquanLi.html">Thử nghiệm form</a>
+              </li> -->
+            </div>
+          </section>
+      
+          <section id="interface">
+              <div class="navigation">
+                  <div class="n1">
+                      <div>
+                          <i id="menu-btn" class="fa-solid fa-bars"></i>
+                      </div>
+                      <div class="search">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                          <input type="text" placeholder="Tìm trong trang">
+                      </div>
+                  </div>
+      
+                  <div class="profile">
+                      <i class="fa-solid fa-bell"></i>
+                      <img src="../images-admin/member-9.png" alt="">
+                  </div>
+              </div>
+              <h3 class="i-name">
+                  Quản lí Danh mục
+              </h3>
+      
+              <div class="values">
+                  <div class="val-box">
+                      <i class="fa-solid fa-users"></i>
+                      <div>
+                          <h3>0,000</h3>
+                          <span>Demo</span>
+                      </div>
+                  </div>
+      
+                  <div class="val-box">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      <div>
+                          <h3>0,000</h3>
+                          <span>Demo</span>
+                      </div>
+                  </div>
+      
+                  <div class="val-box">
+                      <i class="fa-solid fa-bacon"></i>
+                      <div>
+                          <h3>0,000</h3>
+                          <span>Demo</span>
+                      </div>
+                  </div>
+      
+                  <div class="val-box">
+                      <i class="fa-solid fa-dollar-sign"></i>
+                      <div>
+                          <h3>$0,000</h3>
+                          <span>Demo</span>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="themSxTimkiem">
+                  <div class="them">
+                      <button id="themDanhMuc" onclick="toggleForm()">Thêm danh mục</button>
+                  </div>
+      
+                  <div class="sap-xep">
+                      <label for="#">Sắp xếp: </label>
+      
+                      <select name="" id="">
+                          <option value="">Tăng dần</option>
+                          <option value="">Nguyên bản</option>
+                          <option value="">Giảm dần</option>
+                      </select>
+      
+                      <select name="" id="">
+                          <option value="">Theo số lượng</option>
+                          <option value="">Theo ngày tạo</option>
+                      </select>
+                  </div>
+      
+                  <div class="tim-kiem">
+                      <input id="text-search" type="text" placeholder="Tìm tên danh mục">
+      
+                      <button>Tìm kiếm</button>
+                  </div>
+              </div>
+      
+              <div class="board">
+                  <table width = "100%">
+                      <thead>
+                          <tr>
+                              <td>STT</td>
+                              <td>ID</td>
+                              <td>Tên Danh Mục</td>
+                              <td>Ngày tạo</td>
+                              <td>Ngày cập nhật</td>
+                              <td>Chức Năng</td>
+                              
+                          </tr>
+                      </thead>
+      
+                      <tbody id="tbody">
+                          <!-- <tr>
+                              <td>1</td>
+                              <td>123456</td>
+                              <td>Quần áo nam</td>
+                              <td>2022-01-01</td>
+                              <td>2022-01-05</td>
+                              <td>
+                                  <button>Sửa</button>
+                                  <button>Xoá</button>
+                              </td>
+                          </tr> -->
+                      </tbody>
+                  </table>
+              </div>
+          </section>
+    </div>
+
+    <script>
+        $('#menu-btn').click(function(){
+            $('#menu').toggleClass("active")
+        })
+    </script>
+    <script src="../JS/category.js"></script>
+  </body>
+</html>

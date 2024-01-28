@@ -1,0 +1,537 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    background: #e5e7eb;
+}
+/* Form nhập thông tin sản phẩm */
+.newForm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* z-index: 2 dùng cho form */
+    z-index: 2;
+}
+.newForm form {
+    border: 1px solid #a4cad1;
+    margin-bottom: 200px;
+    padding: 20px;
+    background: #e5e7eb;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.newForm form h3{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.newForm form select{
+    margin-bottom: 15px;
+    padding: 5px;
+    width: 50%;
+    outline: none;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.newForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+.newForm input,
+.newForm button,
+.newForm div {
+    margin-bottom: 15px;
+}
+.newForm input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.newForm button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.newForm button:hover {
+    background-color: #45a049;
+}
+.newForm div {
+    display: flex;
+    justify-content: space-between;
+}
+         /* Optional: Style for file input */
+.newForm input[type="file"] {
+    /* display: none; */
+}
+.newForm label[for="image"] {
+    background-color: #757dc2;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+.newForm label[for="image"]:hover {
+    background-color: #3953af;
+}
+.hidden{
+    display: none !important;
+}
+/* Kết thúc - Form nhập thông tin sản phẩm */
+
+.newContainer{
+    width: 100%;
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+#menu{
+    background: #111827;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#menu .logo{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 30px 0 0 30px;
+
+}
+#menu .logo img{
+    width: 200px;
+}
+#menu .items{
+    margin-top: 40px;
+}
+#menu .items li{
+    list-style: none;
+    padding: 15px 0;
+    transition: 0.3 ease;
+}
+#menu .items li i{
+    color: rgb(134, 141, 151);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 10px 0 25px;
+}
+#menu .items li:hover i,
+#menu .items li:hover a{
+    color: #f3f4f6;
+}
+#menu .items li:hover{
+    background: #253047;
+    cursor: pointer;
+}
+#menu .items li:nth-child(2){
+    border-left: 4px solid #fff;
+}
+#menu .items li a{
+    text-decoration: none;
+    color: rgb(134, 141, 151);
+    font-weight: 300px;
+    transition: 0.3 ease;
+}
+#interface{
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    position: relative;
+    margin-bottom: 100px;
+}
+#interface .navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px 30px;
+    border-bottom: 3px solid #594ef7;
+    position: fixed;
+    width: calc(100% - 300px);
+}
+#interface .navigation .search{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid #d7dbe6;
+    border-radius: 4px;
+}
+#interface .navigation .search i{
+    margin-right: 14px;
+}
+#interface .navigation .search input{
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+#interface .navigation .profile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#interface .navigation .profile i{
+    margin-right: 20px;
+    font-size: 19px;
+    font-weight: 400;
+}
+#interface .navigation .profile img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/* Số dòng/ trang */
+.text-end{
+    position: absolute;
+    right: 30px;
+    bottom: -5px;
+}
+.text-end select{
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: #a9d5dd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* Kết thúc Số dòng/ trang */
+.n1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#menu-btn{
+    display: none;
+    color: #2b2b2b;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.i-name{
+    color: #444a53;
+    padding: 30px 30px 0 30px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.i-name button{
+    width: 250px;
+}
+.values{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.values .val-box{
+    background: #fff;
+    width: 235px;
+    padding: 16px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.values .val-box i{
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin-right: 15px;
+}
+.values .val-box:nth-child(1) i{
+    background-color: #7b74ec;
+}
+.values .val-box:nth-child(2) i{
+    background-color: #5c8af0;
+}
+.values .val-box:nth-child(3) i{
+    background-color: #e45d99;
+}
+.values .val-box:nth-child(4) i{
+    background-color: #74daec;
+}
+.values .val-box h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+.values .val-box span{
+    font-size: 15px;
+    color: #828997;
+}
+
+/* Phần Bảng */
+.board{
+    width: 94%;
+    margin: 30px 0 30px 30px;
+    overflow: auto;
+    /* background: #fff; */
+    border-radius: 8px;
+}
+.hotel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.hotel-table th, .hotel-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.hotel-table th {
+    background-color: #f2f2f2;
+}
+.hotel-table #tbody img{
+    width: 70px;
+}
+.board button:nth-child(1),
+.board button:nth-child(2) {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.board button:nth-child(1):hover,
+.board button:nth-child(2):hover{
+    background-color: #45a049;
+}
+.board button:nth-child(3){
+    background-color: #ca9758;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.board button:nth-child(3):hover {
+    background-color: #906026;
+}
+.text-through {
+    text-decoration: line-through;
+    color: red;
+}
+.text-color{
+    color: #906026;
+}
+
+/* Thêm - Sắp xếp - Tìm kiếm */
+.themSxTimkiem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 30px 0 30px;
+    height: 50px;
+}
+.themSxTimkiem .them,
+.themSxTimkiem .sap-xep,
+.themSxTimkiem .tim-kiem{
+    height: 100%;
+}
+.themSxTimkiem .them button{
+    height: 70%;
+    width: 150px;
+    border: none;
+    outline: none;
+    background: #74daec;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.themSxTimkiem .them button:hover{
+    background: #43a2b3;
+}
+.themSxTimkiem .sap-xep{
+    display: flex;
+}
+.themSxTimkiem .sap-xep label{
+    border: 1px solid #5c8af0;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+    height: 70%;
+}
+.themSxTimkiem .sap-xep select{
+    height: 70%;
+    width: 120px;
+    border: none;
+    outline: none;
+    background: #7b74ec;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.themSxTimkiem .sap-xep select:hover{
+    background: #4841b1;
+}
+.themSxTimkiem .tim-kiem button{
+    height: 70%;
+    width: 120px;
+    border: none;
+    outline: none;
+    background: #e45d99;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.themSxTimkiem .tim-kiem button:hover{
+    background: #c2427c;
+}
+.themSxTimkiem .tim-kiem input{
+    height: 70%;
+    padding-left: 5px;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    width: 200px;
+    border-radius: 5px;
+}
+/* Hết: Thêm - Sắp xếp - Tìm kiếm */
+
+/* === Pagination === */
+#pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+#pagination1{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+#pagination button{
+    background-color: #83bebb;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0;
+    border: none;
+    outline: none;
+}
+#pagination ul li{
+    list-style: none;
+    background-color: #83bebb;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+#pagination li:hover,
+#pagination button:hover{
+    background-color: #509592;
+}
+#pagination button i{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.page-choose{
+    background-color: #287571 !important;
+}
+
+/* CSS cho màn hình nhỏ */
+@media (max-width: 769px) {
+    #menu {
+        width: 270px;
+        position: fixed;
+        left: -270px;
+        transition: 0.3s ease;
+    }
+    #menu.active{
+        left: 0px;
+    }
+    #menu-btn{
+        display: initial;
+    }
+    #interface {
+        width: 100%;
+        margin-left: 0px;
+        display: inline-block;
+        transition: 0.3s ease;
+    }
+    #menu.active~ #interface{
+        width: calc(100% - 270px);
+        margin-left: 270px;
+        transition: 0.3s ease;
+    }
+    #interface .navigation {
+        width: 100%;
+        position: absolute;
+    }
+    .values {
+        padding: 30px 30px 0 30px;
+        justify-content: flex-start;
+    }
+    .values .val-box {
+        padding: 16px 20px;
+        margin: 10px 20px 10px 0;
+    }
+    .board {
+        width: 92%;
+        padding: 0;
+        overflow: auto;
+    }
+    table{
+        width: 100%;
+        /* Gộp viền ô bảng. */
+        border-collapse: collapse;
+    }
+}
+@media (max-width: 477px) {
+    #interface .navigation {
+        padding: 15px;
+    }
+    #interface .navigation .search input{
+        width: 150px;
+    }
+    .i-name {
+        padding: 30px 15px 0 15px;
+    }
+    .values {
+        padding: 15px 15px 0 15px;
+    }
+    .values .val-box {
+        width: 100%;
+        margin: 8px 0;
+    }
+    .board {
+        margin: 30px 15px 30px 15px;
+    }
+}

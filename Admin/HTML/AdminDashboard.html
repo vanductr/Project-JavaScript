@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../CSS/AdminDashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div class="popup" id="popup">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <h2>Đăng Xuất!</h2>
+        <p>Bạn muốn đăng xuất?</p>
+        <button id="yes" type="buttons" onclick="logOut()">Đồng ý</button>
+        <button id="no" onclick="fClosePopup()">Huỷ</button>
+    </div>
+
+    <section id="menu">
+      <div class="logo">
+        <a target="_blank" href="../../USER/HTML/index.html"><img src="../images-admin/VinStay.png" alt="" /></a>
+        <h2><a href="../../User/Trang Chủ/index.html">©️</a></h2>
+      </div>
+
+      <div class="items">
+        <li >
+          <i class="fa-solid fa-chart-pie"></i><a href="#">Quản lí User</a>
+        </li>
+
+        <li>
+            <i class="fa-solid fa-table-cells-large"></i
+            ><a href="../HTML/product.html">Products</a>
+        </li>
+
+        <li>
+          <i class="fa-brands fa-uikit"></i><a href="./category.html">Category</a>
+        </li>
+        
+        <li>
+            <i class="fa-solid fa-pen-to-square"></i></i><a href="#">Khác (Chưa cập nhật)</a>
+        </li>
+        <li>
+            <i class="fa-brands fa-cc-visa"></i><a href="#">Khác (Chưa cập nhật)</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-burger"></i><a href="#">Khác (Chưa cập nhật)</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-chart-line"></i><a href="#">Khác (Chưa cập nhật)</a>
+        </li>
+        <!-- <li>
+            <i class="fa-solid fa-vial-virus"></i><a href="./formNhapTTquanLi.html">Thử nghiệm form</a>
+        </li> -->
+      </div>
+    </section>
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div>
+                    <i id="menu-btn" class="fa-solid fa-bars"></i>
+                </div>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Tìm trong trang">
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="fa-solid fa-bell"></i>
+                <img src="../images-admin/member-9.png" alt="">
+                <i onclick="fOpenPopup()" id="arrowRight" class="fa-solid fa-arrow-right-from-bracket"></i>
+            </div>
+        </div>
+        <h3 class="i-name">
+            Bảng Điều Khiển
+        </h3>
+
+        <div class="values">
+            <div class="val-box">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h3>8,267</h3>
+                    <span>Người dùng mới</span>
+                </div>
+            </div>
+
+            <div class="val-box">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div>
+                    <h3>200,521</h3>
+                    <span>Tất cả Đơn đặt hàng</span>
+                </div>
+            </div>
+
+            <div class="val-box">
+                <i class="fa-solid fa-bacon"></i>
+                <div>
+                    <h3>215,542</h3>
+                    <span>Sản phẩm bán</span>
+                </div>
+            </div>
+
+            <div class="val-box">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <div>
+                    <h3>$677.89</h3>
+                    <span>Tháng này</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="board">
+            <table width = "100%">
+                <thead>
+                    <tr>
+                        <td>STT</td>
+                        <td>ID</td>
+                        <td>Tên tài khoản</td>
+                        <td>Email</td>
+                        <td>Trạng thái</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody">
+
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>12354321</td>
+                        <td>TranVanA</td>
+                        <td>trungnguyen@example.com</td>
+                        <td>Đang hoạt động</td>
+                        <td>
+                            <button>Sửa</button>
+                            <button>Xoá</button>
+                            <button>Chi tiết</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        $('#menu-btn').click(function(){
+            $('#menu').toggleClass("active")
+        })
+    </script>
+    <script src="../JS/AdminDashboard.js"></script>
+  </body>
+</html>
